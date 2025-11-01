@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morada Feliz Kennel - Filhotes de Shihtzu e Spitz Alemão</title>
+    <meta name="description" content="Criatório Morada Feliz Kennel - Filhotes de Shihtzu e Spitz Alemão com pedigree, vacinados e com alimentação premium.">
+    <meta name="keywords" content="shihtzu, spitz alemão, filhotes, kennel, cães de raça, morada feliz">
+    <meta name="author" content="Morada Feliz Kennel">
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff7f00;
+            --primary-dark: #e67300;
+            --primary-light: #ffa64d;
+            --white: #ffffff;
+            --gray: #555;
+            --light: #f8f9fa;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 12px 25px rgba(0, 0, 0, 0.15);
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--gray);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .kennel-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .kennel-subtitle {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .social-btn:hover {
+            background: #fff3e6;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .social-btn img {
+            width: 26px;
+            height: 26px;
+        }
+
+        /* Produtos */
+        .products {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.03);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--gray);
+            margin-bottom: 0.4rem;
+        }
+
+        .breed {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .food {
+            font-size: 0.9rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .btn {
+            margin-top: auto;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.03);
+        }
+
+        /* Popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            max-width: 380px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.8);
+            transition: var(--transition);
+        }
+
+        .popup-overlay.show .popup {
+            transform: scale(1);
+        }
+
+        .popup h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .popup p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f0f0f0;
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            padding: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .kennel-title { font-size: 2.1rem; }
+            .section-title { font-size: 1.9rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .profile-img { width: 120px; height: 120px; }
+            .social-btn { padding: 0.9rem 1.8rem; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="profile">
+            <img src="https://raw.githubusercontent.com/moradafelizkennel-cell/kennelmoradafeliz/main/foto%20de%20perfil.png" 
+                 alt="Morada Feliz Kennel - Foto do Criatório" class="profile-img">
+            <div>
+                <h1 class="kennel-title">Morada Feliz Kennel</h1>
+                <p class="kennel-subtitle">Filhotes com amor, saúde e pedigree</p>
+            </div>
+        </div>
+        <a href="https://www.facebook.com/keel.santos.364977/" target="_blank" class="social-btn">
+            <img src="https://raw.githubusercontent.com/moradafelizkennel-cell/kennelmoradafeliz/main/foto%20facebook.png" alt="Facebook">
+            Siga-nos no Facebook
+        </a>
+    </header>
+
+    <!-- Produtos -->
+    <section class="products">
+        <h2 class="section-title">Nossos Filhotes Disponíveis</h2>
+        <div class="grid">
+
+            <!-- Luna -->
+            <div class="card">
+                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/Shihtzu%20f%C3%AAmea1.png?raw=true" 
+                     alt="Luna - Shihtzu Fêmea" class="card-img">
+                <div class="card-body">
+                    <div class="name">Luna</div>
+                    <div class="breed">Shihtzu • Fêmea</div>
+                    <div class="food">Fórmula Natural Premium</div>
+                    <div class="price">R$ 1.800,00</div>
+                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
+                </div>
+            </div>
+
+            <!-- Bella -->
+            <div class="card">
+                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/Shihtzu%20f%C3%AAmea2.png?raw=true" 
+                     alt="Bella - Shihtzu Fêmea" class="card-img">
+                <div class="card-body">
+                    <div class="name">Bella</div>
+                    <div class="breed">Shihtzu • Fêmea</div>
+                    <div class="food">Fórmula Natural Premium</div>
+                    <div class="price">R$ 1.800,00</div>
+                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
+                </div>
+            </div>
+
+            <!-- Nina -->
+            <div class="card">
+                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/hjjgf.png?raw=true" 
+                     alt="Nina - Spitz Alemão Fêmea" class="card-img">
+                <div class="card-body">
+                    <div class="name">Nina</div>
+                    <div class="breed">Spitz Alemão • Fêmea</div>
+                    <div class="food">Fórmula Natural Premium</div>
+                    <div class="price">R$ 3.900,00</div>
+                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
+                </div>
+            </div>
+
+            <!-- Thor -->
+            <div class="card">
+                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/spitz%20alem%C3%A3o%20macho1.png?raw=true" 
+                     alt="Thor - Spitz Alemão Macho" class="card-img">
+                <div class="card-body">
+                    <div class="name">Thor</div>
+                    <div class="breed">Spitz Alemão • Macho</div>
+                    <div class="food">Fórmula Natural Premium</div>
+                    <div class="price">R$ 2.900,00</div>
+                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
+                </div>
+            </div>
+
+            <!-- Max -->
+            <div class="card">
+                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/spitz%20alem%C3%A3o%20macho2.png?raw=true" 
+                     alt="Max - Spitz Alemão Macho" class="card-img">
+                <div class="card-body">
+                    <div class="name">Max</div>
+                    <div class="breed">Spitz Alemão • Macho</div>
+                    <div class="food">Fórmula Natural Premium</div>
+                    <div class="price">R$ 2.900,00</div>
+                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© <span id="year">2025</span> Morada Feliz Kennel. Todos os direitos reservados.</p>
+    </footer>
+
+</div>
+
+<!-- Popup -->
+<div id="popup" class="popup-overlay">
+    <div class="popup">
+        <h3>Redirecionando...</h3>
+        <p>Você está sendo levado ao Facebook</p>
+        <div class="spinner"></div>
+    </div>
+</div>
+
+<script>
+    // Ano dinâmico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const popup = document.getElementById('popup');
+    const buttons = document.querySelectorAll('.btn');
+
+    function openFacebook(url) {
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        
+        popup.classList.add('show');
+        
+        setTimeout(() => {
+            if (isMobile) {
+                // Tenta abrir o app do Facebook
+                window.location = 'fb://profile/10158673264535496';
+                setTimeout(() => window.open(url, '_blank'), 1800);
+            } else {
+                window.open(url, '_blank', 'noopener');
+            }
+            setTimeout(() => popup.classList.remove('show'), 800);
+        }, 2600);
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            openFacebook(btn.dataset.link);
+        });
+    });
+
+    // Fechar popup ao clicar fora
+    popup.addEventListener('click', e => {
+        if (e.target === popup) popup.classList.remove('show');
+    });
+</script>
+
+</body>
+</html>
