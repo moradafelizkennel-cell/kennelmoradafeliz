@@ -7,6 +7,7 @@
     <meta name="description" content="Criatório Morada Feliz Kennel - Filhotes de Shihtzu e Spitz Alemão vacinados e com alimentação premium.">
     <meta name="keywords" content="shihtzu, spitz alemão, filhotes, kennel, cães de raça, morada feliz">
     <meta name="author" content="Morada Feliz Kennel">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -113,6 +114,8 @@
         .social-btn img {
             width: 26px;
             height: 26px;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         /* Produtos */
@@ -148,6 +151,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            justify-content: center;
         }
 
         .card {
@@ -159,6 +163,9 @@
             display: flex;
             flex-direction: column;
             border: 1px solid #eee;
+            max-width: 350px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .card:hover {
@@ -168,7 +175,7 @@
 
         .card-img {
             width: 100%;
-            height: 210px;
+            height: 250px;
             object-fit: cover;
             transition: var(--transition);
         }
@@ -198,13 +205,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .food {
-            font-size: 0.9rem;
-            color: #777;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
         .price {
             font-size: 1.5rem;
             font-weight: 700;
@@ -222,10 +222,25 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+            display: inline-block;
         }
 
         .btn:hover {
             background: var(--primary-dark);
+            transform: scale(1.03);
+        }
+        
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #555;
+        }
+        
+        .btn-secondary:hover {
+            background: #d0d0d0;
             transform: scale(1.03);
         }
 
@@ -267,7 +282,7 @@
 
         .popup h3 {
             color: var(--primary);
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             font-size: 1.4rem;
         }
 
@@ -276,18 +291,10 @@
             margin-bottom: 1.5rem;
         }
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f0f0f0;
-            border-top: 5px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .popup-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .footer {
@@ -316,7 +323,7 @@
     <!-- Header -->
     <header class="header">
         <div class="profile">
-            <img src="https://raw.githubusercontent.com/moradafelizkennel-cell/kennelmoradafeliz/main/foto%20de%20perfil.png" 
+            <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/lulu%20da%20pomerania.png?raw=true" 
                  alt="Morada Feliz Kennel - Foto do Criatório" class="profile-img">
             <div>
                 <h1 class="kennel-title">Morada Feliz Kennel</h1>
@@ -324,78 +331,25 @@
             </div>
         </div>
         <a href="https://www.facebook.com/keel.santos.364977/" target="_blank" class="social-btn">
-            <img src="https://raw.githubusercontent.com/moradafelizkennel-cell/kennelmoradafeliz/main/foto%20facebook.png" alt="Facebook">
+            <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/lulu%20da%20pomerania.png?raw=true" alt="Facebook">
             Siga-nos no Facebook
         </a>
     </header>
 
     <!-- Produtos -->
     <section class="products">
-        <h2 class="section-title">Nossos Filhotes Disponíveis</h2>
+        <h2 class="section-title">Filhotes Disponíveis</h2>
         <div class="grid">
 
-            <!-- Luna -->
+            <!-- Lulu da Pomerania -->
             <div class="card">
-                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/Shihtzu%20f%C3%AAmea1.png?raw=true" 
-                     alt="Luna - Shihtzu Fêmea" class="card-img">
+                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/lulu%20da%20pomerania.png?raw=true" 
+                     alt="Lulu da Pomerania" class="card-img">
                 <div class="card-body">
-                    <div class="name">Luna</div>
-                    <div class="breed">Shihtzu • Fêmea</div>
-                    <div class="food">Fórmula Natural Premium</div>
-                    <div class="price">R$ 1.800,00</div>
-                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
-                </div>
-            </div>
-
-            <!-- Bella -->
-            <div class="card">
-                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/Shihtzu%20f%C3%AAmea2.png?raw=true" 
-                     alt="Bella - Shihtzu Fêmea" class="card-img">
-                <div class="card-body">
-                    <div class="name">Bella</div>
-                    <div class="breed">Shihtzu • Fêmea</div>
-                    <div class="food">Fórmula Natural Premium</div>
-                    <div class="price">R$ 1.800,00</div>
-                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
-                </div>
-            </div>
-
-            <!-- Nina -->
-            <div class="card">
-                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/hjjgf.png?raw=true" 
-                     alt="Nina - Spitz Alemão Fêmea" class="card-img">
-                <div class="card-body">
-                    <div class="name">Nina</div>
-                    <div class="breed">Spitz Alemão • Fêmea</div>
-                    <div class="food">Fórmula Natural Premium</div>
-                    <div class="price">R$ 3.900,00</div>
-                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
-                </div>
-            </div>
-
-            <!-- Thor -->
-            <div class="card">
-                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/spitz%20alem%C3%A3o%20macho1.png?raw=true" 
-                     alt="Thor - Spitz Alemão Macho" class="card-img">
-                <div class="card-body">
-                    <div class="name">Thor</div>
-                    <div class="breed">Spitz Alemão • Macho</div>
-                    <div class="food">Fórmula Natural Premium</div>
-                    <div class="price">R$ 2.900,00</div>
-                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
-                </div>
-            </div>
-
-            <!-- Max -->
-            <div class="card">
-                <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/spitz%20alem%C3%A3o%20macho2.png?raw=true" 
-                     alt="Max - Spitz Alemão Macho" class="card-img">
-                <div class="card-body">
-                    <div class="name">Max</div>
-                    <div class="breed">Spitz Alemão • Macho</div>
-                    <div class="food">Fórmula Natural Premium</div>
-                    <div class="price">R$ 2.900,00</div>
-                    <button class="btn" data-link="https://www.facebook.com/keel.santos.364977/">Tenho Interesse</button>
+                    <div class="name">Lulu da Pomerania</div>
+                    <div class="breed">Spitz Alemão</div>
+                    <div class="price">R$ 2.500,00</div>
+                    <button class="btn" onclick="openPopup()">Comprar</button>
                 </div>
             </div>
 
@@ -411,9 +365,11 @@
 <!-- Popup -->
 <div id="popup" class="popup-overlay">
     <div class="popup">
-        <h3>Redirecionando...</h3>
-        <p>Você está sendo levado ao Facebook</p>
-        <div class="spinner"></div>
+        <p>Para comprar acesse meu contato no facebook</p>
+        <div class="popup-actions">
+            <a href="https://m.me/61584001211444" class="btn">Acessar contato</a>
+            <button class="btn btn-secondary" onclick="closePopup()">Depois, obrigado</button>
+        </div>
     </div>
 </div>
 
@@ -422,39 +378,20 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const popup = document.getElementById('popup');
-    const buttons = document.querySelectorAll('.btn');
 
-    function openFacebook(url) {
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        
+    function openPopup() {
         popup.classList.add('show');
-        
-        setTimeout(() => {
-            if (isMobile) {
-                // Tenta abrir o app do Facebook
-                window.location = 'fb://profile/10158673264535496';
-                setTimeout(() => window.open(url, '_blank'), 1800);
-            } else {
-                window.open(url, '_blank', 'noopener');
-            }
-            setTimeout(() => popup.classList.remove('show'), 800);
-        }, 2600);
     }
 
-    buttons.forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            openFacebook(btn.dataset.link);
-        });
-    });
+    function closePopup() {
+        popup.classList.remove('show');
+    }
 
     // Fechar popup ao clicar fora
     popup.addEventListener('click', e => {
-        if (e.target === popup) popup.classList.remove('show');
+        if (e.target === popup) closePopup();
     });
 </script>
 
 </body>
-
 </html>
-
