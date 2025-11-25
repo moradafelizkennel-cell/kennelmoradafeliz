@@ -19,6 +19,15 @@
             box-sizing: border-box;
         }
 
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            -webkit-touch-callout: none; /* Disable iOS touch menu */
+        }
+
         :root {
             --primary: #ff7f00;
             --primary-dark: #e67300;
@@ -330,7 +339,7 @@
                 <p class="kennel-subtitle">Filhotes com amor, saúde.</p>
             </div>
         </div>
-        <a href="https://www.facebook.com/keel.santos.364977/" target="_blank" class="social-btn">
+        <a href="https://m.me/61584001211444" target="_blank" class="social-btn">
             <img src="https://github.com/moradafelizkennel-cell/kennelmoradafeliz/blob/main/lulu%20da%20pomerania.png?raw=true" alt="Facebook">
             Siga-nos no Facebook
         </a>
@@ -390,6 +399,20 @@
     // Fechar popup ao clicar fora
     popup.addEventListener('click', e => {
         if (e.target === popup) closePopup();
+    });
+
+    // Bloquear menu de contexto (botão direito) nas imagens
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+
+    // Bloquear arrastar imagens
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
     });
 </script>
 
